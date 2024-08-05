@@ -21,7 +21,7 @@ function App() {
   useEffect(() => {
     document.title = `Bookcase (${bookcase.length})`;
   }, [bookcase]);
-
+console.log(bookcase)
   return (
     <Router>
       <Header />

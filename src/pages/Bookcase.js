@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "../Bookcase.css";
-import Book from "../components/Book";
+import "./Bookcase.css";
+import Book from "../components/book/Book";
 
 function Bookcase({ books, addBook, removeBook }) {
   const [newBookTitle, setNewBookTitle] = useState("");
@@ -15,6 +15,7 @@ function Bookcase({ books, addBook, removeBook }) {
       },
       price: 0 // Default price
     };
+
     addBook(newBook);
     setNewBookTitle("");
   };
@@ -32,7 +33,7 @@ function Bookcase({ books, addBook, removeBook }) {
       <div>
         {books.map((book) => (
           <div className="book" key={book.id}>
-            <Book book={book} removeBook={removeBook} />
+            <Book bookProps={book} removeBook={removeBook} />
           </div>
         ))}
       </div>

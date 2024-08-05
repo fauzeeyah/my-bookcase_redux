@@ -1,13 +1,14 @@
 import React from "react";
 
-function Book({ book, removeBook }) {
+function Book({ bookProps, removeBook }) {
+ 
   return (
     <div>
-      <h3>{book.volumeInfo.title}</h3>
-      <p>Authors: {book.volumeInfo.authors ? book.volumeInfo.authors.join(", ") : "Unknown"}</p>
-      <p>Description: {book.volumeInfo.description || "No description available"}</p>
-      <p>Price: {book.price !== null ? `$${book.price}` : "Price not available"}</p>
-      <button onClick={() => removeBook(book.id)}>Remove</button>
+      <h3>{bookProps.volumeInfo.title}</h3>
+      <p>Authors: {bookProps.volumeInfo.authors ? bookProps.volumeInfo.authors.join(", ") : "Unknown"}</p>
+      <p>Description: {bookProps.volumeInfo.description || "No description available"}</p>
+      <p>Price: {bookProps.price !== null ? `$${bookProps.price}` : "Price not available"}</p>
+      <button onClick={() => removeBook(bookProps.id)}>Remove</button>
     </div>
   );
 }
